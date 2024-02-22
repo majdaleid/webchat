@@ -1,7 +1,11 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\WebchatController;
 
+use App\Livewire\FirstStep;
+use App\Livewire\SecondStep;
+use App\Livewire\ThirdStep;
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -25,4 +29,12 @@ Route::middleware([
     Route::get('/dashboard', function () {
         return view('dashboard');
     })->name('dashboard');
+
+    Route::get('/first-step', FirstStep::class)->name('firststep');
+    Route::get('/second-step', SecondStep::class)->name('secondstep');
+    Route::get('/third-step', ThirdStep::class)->name('thirdstep');
+
+    Route::get('/confirmation', function () {
+        return view('confirmation');
+    })->name('confirmation');
 });
